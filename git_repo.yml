@@ -10,7 +10,13 @@
           maven_version: 3.8.8
           maven_install_dir: /opt
           git_repo_dir: /home/ansible/git_projects
-  tasks:          
+  tasks: 
+
+        - name: Install Git
+          package:
+            name: git
+            state: present
+                     
         - name: Create a git_project directory
           file:
             path: "{{git_repo_dir}}"
